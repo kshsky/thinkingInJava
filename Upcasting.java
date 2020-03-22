@@ -1,6 +1,14 @@
 public class Upcasting{
 
 	public static void main(String[] args){
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		
+		
 	Shap shap = new Shap();
 	Circle circle = new Circle();
 	Square square = new Square();
@@ -17,7 +25,7 @@ public class Upcasting{
 	System.out.println("===============>>>Triangle triangle = new Triangle();");
 	test.doSomething(triangle);
 	
-	System.out.println("///////////////////////////////////////////////////////");
+	System.out.println("\r\n\r\n///////////////////////////////////////////////////////\r\n\r\n");
 	Shap circleShap = new Circle();
 	Shap squareShap = new Square();
 	Shap triangleShap = new Triangle();
@@ -46,11 +54,13 @@ public class Upcasting{
 
 	public void doSomething(Shap shap){
 		
+		
 		shap.erase();
 		shap.draw();
 		//if son override father's getColor, there will get a new value,otherwise there will get father's value
-		System.out.println(shap.getColor());
-		System.out.println(shap.weight);
+		System.out.println(">shap.getColor()\r\n"+shap.getColor());
+		//the son always use father's attribute
+		System.out.println(">>shap.getClass() ---- shap.weight\r\n"+shap.getClass()+" ---- "+shap.weight);
 		
 	}
 
@@ -59,7 +69,7 @@ public class Upcasting{
 class Shap{
 	
 	protected String weight="Shap weights 80kg";
-	private String color="Shap-red";
+	private String color="Shap-green";
 	
 	public void setColor(String color){
 		this.color = color;
@@ -73,14 +83,14 @@ class Shap{
 	
 	public void erase(){
 		
-		System.out.println("Shap erase - Shap");
-		System.out.println(weight+" --- "+color);		
+		System.out.println("Shap erase --- " + weight + " --- " + color);
+
 	}
 	
 	public void draw(){
 		
-		System.out.println("Shap draw - Shap");
-		System.out.println(weight+" --- "+color);	
+		System.out.println("Shap draw ---"+ weight + " --- " + color);
+	
 	}
 	
 	
@@ -103,22 +113,20 @@ class Circle extends Shap{
 	}
 	public void erase(){
 		
-		System.out.println("Circle erase - Circle");
-		System.out.println(weight+" --- "+color);	
-		
+		System.out.println("Circle erase --- " + weight + " --- " + color);
+
 	}
 	
 	public void draw(){
 		
-		System.out.println("Circle draw - Circle");
-		System.out.println(weight+" --- "+color);	
+		System.out.println("Circle draw  --- " + weight + " --- " + color);
 	}
 	
 }
 class Square extends Shap{
 	
 	private String weight="Square-3kg";
-	private String color="Square-red";
+	private String color="Square-blue";
 	
 	
 	public String getColor(){
@@ -128,34 +136,26 @@ class Square extends Shap{
 	
 	public void erase(){
 		
-		System.out.println("Square erase - Square");
-		System.out.println(weight+" --- "+color);		
+		System.out.println("Square erase  --- " + weight + " --- " + color);
+	
 	}
 	
 	public void draw(){
 		
-		System.out.println("Square draw - Square");
-		System.out.println(weight+" --- "+color);		
+		System.out.println("Square draw  --- " + weight + " --- " + color);
+
 	}
 	
 }
 class Triangle extends Shap{
 	
 	//private String weight="Triangle-3kg";
-	private String color="Triangle-red";
+	private String color="Triangle-black";
 	
 	public void erase(){
 		
-		System.out.println("Triangle erase - Triangle");
-		System.out.println(weight+" --- "+color);
+		System.out.println("Triangle erase  --- " + weight + " --- " + color);
 				
-	}
-	
-	public void draw(){
-		
-		System.out.println("Triangle draw - Triangle");
-		System.out.println(weight+" --- "+color);
-			
 	}
 	
 }
